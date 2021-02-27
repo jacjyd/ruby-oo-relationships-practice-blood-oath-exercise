@@ -12,7 +12,7 @@ end
 # BloodOath initialize (follower, cult, initiation_date = (string))
 
 locations = ["test location","Mom's basement","Seattle, WA", "Washington, DC", "New York, NY", "in your mind"]
-slogans = ["test slogan","Taco Tuesday is Every Day","We love Jolene","All Hail Sqkrz","There is only one true pizza","Nothing is real except the true despair of existence"]
+slogans = ["test slogan","Taco Tuesday is Every Day","No more Booms plz","Let there be salmon","There is only one true pizza","Nothing is real except the true despair of existence"]
 cult_names = ["Test Cult","Fiesta Folks","Jojo's Peepos","Squake and Bake","Big Greasy Apple","We Be Ennui"]
 years = [1801,1975,2018,2013,1901,1985]
 
@@ -33,7 +33,7 @@ follower2 = Follower.new(name:follower_names[2], age:follower_ages[2], life_mott
 follower3 = Follower.new(name:follower_names[3], age:follower_ages[3], life_motto:mottos[3])
 follower4 = Follower.new(name:follower_names[4], age:follower_ages[4], life_motto:mottos[4])
 follower5 = Follower.new(name:follower_names[5], age:follower_ages[5], life_motto:mottos[5])
-worf = Follower.new(name:"Worf, Son of Mogh", age: 65, life_motto:"Today is a good is a day to die")
+worf = Follower.new(name:"Worf, Son of Mogh", age: 65, life_motto:"Today is a good day to die")
 
 test_blood_oath = BloodOath.new(test_follower,test_cult, "1900-01-01")
 blood_oath1 = BloodOath.new(follower2, taco_cult, "1992-02-12")
@@ -44,7 +44,7 @@ blood_oath5 = BloodOath.new(follower1, pizza_cult, "1988-05-23")
 blood_oath6 = BloodOath.new(follower3, sad_cult, "2012-06-01") 
 blood_oath7 = BloodOath.new(follower2, sad_cult, "1985-05-24")
 
-
+taco_cult2 = Cult.new(name:"Tacos to Heaven", location:locations[1],founding_year:2010, slogan:"Takin' names, takin' tacos")
 
 
 binding.pry

@@ -9,8 +9,8 @@ class BloodOath
 
 
     def initialize (follower, cult, initiation_date = Date.today)
-        @follower = follower
-        @cult = cult
+        @follower   = follower
+        @cult       = cult
 
         if initiation_date.class == Date
             @initiation_date = "#{initiation_date}"
@@ -24,6 +24,12 @@ class BloodOath
 
     def self.all
         @@all_oaths
+    end
+
+    def self.first_oath
+        all.sort_by { |oath| oath.initiation_date }
+            .first
+            .follower
     end
 
 end
