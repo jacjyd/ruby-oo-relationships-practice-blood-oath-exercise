@@ -1,5 +1,4 @@
 
-require 'date'
 
 class Follower
 
@@ -21,7 +20,7 @@ class Follower
           .map { |oath| oath.cult }
     end
 
-    def join_cult (new_cult)
+    def join_cult(new_cult)
         if age < new_cult.minimum_age
             "Sorry, this follower is too young for this cult."
         else

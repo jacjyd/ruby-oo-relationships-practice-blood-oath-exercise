@@ -1,6 +1,4 @@
 
-require 'date'
-require 'pry'
 
 class Cult
 

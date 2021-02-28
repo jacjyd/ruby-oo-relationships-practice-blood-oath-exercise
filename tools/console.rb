@@ -21,7 +21,7 @@ taco_cult = Cult.new(name: cult_names[1], location: locations[1], founding_year:
 jojo_cult = Cult.new(name: cult_names[2], location: locations[2], founding_year: years[2], slogan: slogans[2])
 sqkr_cult = Cult.new(name: cult_names[3], location: locations[3], founding_year: years[3], slogan: slogans[3])
 pizza_cult = Cult.new(name: cult_names[4], location: locations[4], founding_year: years[4], slogan: slogans[4])
-sad_cult = Cult.new(name: cult_names[5], location: locations[5], founding_year: years[5], slogan: slogans[5])
+sad_cult = Cult.new(name: cult_names[5], location: locations[5], founding_year: years[5], slogan: slogans[5], minimum_age:18)
 
 follower_names = ["test follower name","Paul","Diana","John","Leroy Jenkins","Super Bro"]
 mottos = ["test motto", "Live más","I'm lovin' it","It's good to be king","Leeeeroyyyy Jenkinsssss","By all means, yes, be a jerk"]
