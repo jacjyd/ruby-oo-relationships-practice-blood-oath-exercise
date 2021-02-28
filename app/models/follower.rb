@@ -22,7 +22,11 @@ class Follower
     end
 
     def join_cult (new_cult)
-        BloodOath.new(self, new_cult, Date.today)
+        if age < new_cult.minimum_age
+            "Sorry, this follower is too young for this cult."
+        else
+            BloodOath.new(self, new_cult, Date.today)
+        end
     end
 
     def my_cults_slogans
@@ -32,6 +36,14 @@ class Follower
 
     def number_of_cults
         cults.count
+    end
+
+    def fellow_cult_members
+        cult_friends = []
+        cults.each { |cult| cult_friends << cult.followers }
+        cult_friends.flatten
+            .uniq
+            .delete_if { |friend| friend == self }
     end
 
     def self.all

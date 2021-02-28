@@ -4,21 +4,27 @@ require 'pry'
 
 class Cult
 
-    attr_accessor :name, :location, :founding_year, :slogan
+    attr_accessor :name, :location, :founding_year, :slogan, :minimum_age
 
     @@all_cults = []
 
-    def initialize (name:"Cult name unknown", location:"Location unknown", founding_year:"99999", slogan:"Slogan unknown")
+    def initialize (name:"Cult name unknown", location:"Location unknown", founding_year:99999, slogan:"Slogan unknown", minimum_age: 0)
         @name           = name
         @location       = location
         @founding_year  = founding_year
         @slogan         = slogan
 
+        @minimum_age    = minimum_age
+
         @@all_cults << self
     end
 
     def recruit_follower (new_follower)
-        BloodOath.new(new_follower, cult, Date.today)
+        if new_follower.age < minimum_age
+            "This follower is too young to join this cult."
+        else
+            BloodOath.new(new_follower, self, Date.today)
+        end
     end
 
     def followers
@@ -33,7 +39,7 @@ class Cult
 
     def average_age
         #filter out any followers with default (unknown) age of 0 to disregard
-        relevant_followers = followers.delete { |follower| follower.age == 0 }
+        relevant_followers = followers.delete_if { |follower| follower.age == 0 }
         total_age = relevant_followers.map { |follower| follower.age }.sum 
         total_age/relevant_followers.count
     end
